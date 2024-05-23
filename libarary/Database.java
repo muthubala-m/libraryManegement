@@ -5,19 +5,19 @@ import java.sql.*;
 public class Database {
 
     // connection attributes
-    private final String url = "jdbc:mysql://localhost:3306/library";
-    private final String userName = "root";
-    private final String passWord = "2004";
-    private Connection connection = null;
+    static private final String url = "jdbc:mysql://localhost:3306/library";
+    static private final String userName = "root";
+    static private final String passWord = "2004";
+    static private Connection connection = null;
 
     // connect to the databse
-    public Connection connectDatabse(){
+    static public Connection connectDatabse(){
         try{
-            this.connection = DriverManager.getConnection(url, userName, passWord);
+            connection = DriverManager.getConnection(url, userName, passWord);
         }catch(Exception e){
             System.err.println(e.getMessage());
         }
-        return this.connection;
+        return connection;
     }
 
     // closing the databse connection
