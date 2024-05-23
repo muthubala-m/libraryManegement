@@ -11,7 +11,7 @@ public class Main {
                 do{
                     libChoise = menu.libraryMenu();
                     menu.switchLibraryOperation(libChoise);
-                }while(libChoise>0 && libChoise<5);
+                }while(libChoise>0 && libChoise<4);
             }
         } while (choise>0 && choise<3);
     }

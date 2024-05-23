@@ -42,7 +42,7 @@ public class Book {
     public void displayResultSet(ResultSet resultSet,boolean isOne){
         try{
             if(isOne){
-                System.out.printf(" %4d %10s %10d %4d", resultSet.getInt(1),resultSet.getString(2),resultSet.getInt(3),resultSet.getInt(5));
+                System.out.printf(" %4d %10s %10s %4d", resultSet.getInt(1),resultSet.getString(2),"$"+resultSet.getInt(3)+"/day",resultSet.getInt(5));
                 System.out.println();
             }else{
                 do{

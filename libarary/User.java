@@ -41,8 +41,11 @@ public class User {
         }
     }
 
-    // getter is login
+    // getter & setter  login
     public boolean getisLogin(){
         return this.isLogin;
+    }
+    public void setisLogin(boolean isLogin){
+        this.isLogin = isLogin;
     }
 }
