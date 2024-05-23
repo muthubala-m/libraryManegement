@@ -8,11 +8,11 @@ public class Main {
             isLogin = menu.switchAuthOperation(choise);
             if (isLogin) {
                 int libChoise = 0;
-                do{
+                do {
                     libChoise = menu.libraryMenu();
                     menu.switchLibraryOperation(libChoise);
-                }while(libChoise>0 && libChoise<4);
+                } while (libChoise > 0 && libChoise < 4);
             }
-        } while (choise>0 && choise<3);
+        } while (choise > 0 && choise < 3);
     }
 }

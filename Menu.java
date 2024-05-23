@@ -15,7 +15,7 @@ public class Menu {
 
     // auth menu
 
-    public int authMenu(){
+    public int authMenu() {
         int choise = 0;
         System.out.println("----------------------------------");
         System.out.println("\t User Authendication ");
@@ -29,23 +29,23 @@ public class Menu {
 
     // libary menu option
 
-    public int libraryMenu(){
-            int choise = 0;
-            System.out.println("----------------------------------");
-            System.out.println("\t User Authendication ");
-            System.out.println("----------------------------------");
-            System.out.println("1.buying a new book");
-            System.out.println("2.return a book");
-            System.out.println("3.show all books");
-            System.out.println("4.logout");
-            System.out.print("enter your choise ?");
-            choise = scanner.nextInt();
-            return choise;
+    public int libraryMenu() {
+        int choise = 0;
+        System.out.println("----------------------------------");
+        System.out.println("\t User Authendication ");
+        System.out.println("----------------------------------");
+        System.out.println("1.buying a new book");
+        System.out.println("2.return a book");
+        System.out.println("3.show all books");
+        System.out.println("4.logout");
+        System.out.print("enter your choise ?");
+        choise = scanner.nextInt();
+        return choise;
     }
 
     // switch auth operation
 
-    public boolean switchAuthOperation(int choise){
+    public boolean switchAuthOperation(int choise) {
         String userName = null;
         String email = null;
         String passWord = null;
@@ -76,7 +76,7 @@ public class Menu {
 
     // switch library manegement
 
-    public void switchLibraryOperation(int choise){
+    public void switchLibraryOperation(int choise) {
         int bookId;
         switch (choise) {
             case 1:
@@ -98,7 +98,7 @@ public class Menu {
     }
 
     // payment menu
-    public int paymentOption(){
+    public int paymentOption() {
         System.out.println("1.instant pay");
         System.out.println("2.return pay");
         System.out.println("enter your choise :");
@@ -107,13 +107,13 @@ public class Menu {
     }
 
     // payment operation
-    
+
     public void switchPaymentOperation(int choise){
         switch (choise) {
             case 1:
                 System.out.println("enter the ammount to pay :");
-                int ammount = scanner.nextInt();
-                if (ammount == ) {
+                int amount = scanner.nextInt();
+                if (amount ==  ) {
                     
                 }
                 break;

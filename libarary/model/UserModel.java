@@ -4,38 +4,37 @@ import java.sql.*;
 
 import libarary.Database;
 
-public class UserModel{
+public class UserModel {
 
-    private Statement statement= null;
+    private Statement statement = null;
     private String query = null;
     private PreparedStatement preparedStatement = null;
     private Connection connection = Database.connectDatabse();
     private ResultSet resultSet = null;
 
     // get single user record
-    public ResultSet getSingleUser(String userName){
-        this.query = "select * from users where userName ='"+userName+"'";
-        try{
+    public ResultSet getSingleUser(String userName) {
+        this.query = "select * from users where userName ='" + userName + "'";
+        try {
             this.statement = this.connection.createStatement();
-            this.resultSet =statement.executeQuery(query);
+            this.resultSet = statement.executeQuery(query);
             if (!(resultSet.next())) {
                 this.resultSet = null;
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             System.err.println(e.getMessage());
         }
         return this.resultSet;
     }
 
     // get all user records
-    public ResultSet getAllUsers(){
+    public ResultSet getAllUsers() {
         this.query = "select * from users";
-        try{
+        try {
             this.statement = this.connection.createStatement();
             this.resultSet = this.statement.executeQuery(query);
             this.resultSet.next();
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             System.err.println(e.getMessage());
         }
         return this.resultSet;
@@ -43,7 +42,7 @@ public class UserModel{
 
     // insert a new record
 
-    public int insertUser(String userName,String email,String passWord){
+    public int insertUser(String userName, String email, String passWord) {
         int rows = 0;
         this.query = "insert into users (userName,email,passWord) values(?,?,?)";
         try {
@@ -55,7 +54,7 @@ public class UserModel{
         } catch (SQLException e) {
             if (e.getErrorCode() == 1062) {
                 System.err.println("user details alredy exists");
-            }else{
+            } else {
                 System.out.println(e.getMessage());
             }
         }

@@ -11,20 +11,20 @@ public class Database {
     static private Connection connection = null;
 
     // connect to the databse
-    static public Connection connectDatabse(){
-        try{
+    static public Connection connectDatabse() {
+        try {
             connection = DriverManager.getConnection(url, userName, passWord);
-        }catch(Exception e){
+        } catch (Exception e) {
             System.err.println(e.getMessage());
         }
         return connection;
     }
 
     // closing the databse connection
-    public void disconnectDatabase(){
-        try{
+    public void disconnectDatabase() {
+        try {
             connection.close();
-        }catch(Exception e){
+        } catch (Exception e) {
             System.err.println(e.getMessage());
         }
     }
