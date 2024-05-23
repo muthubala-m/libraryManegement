@@ -1,10 +1,17 @@
 import java.util.Scanner;
 
+import libarary.Book;
 import libarary.User;
 
 public class Menu {
+
+    // menu attributes
+    
     Scanner scanner = new Scanner(System.in);
     User user = new User();
+    Book book = new Book();
+
+    // auth menu
 
     public int authMenu(){
         int choise = 0;
@@ -18,7 +25,9 @@ public class Menu {
         return choise;
     }
 
-    public void libraryMenu(){
+    // libary menu option
+
+    public int libraryMenu(){
             int choise = 0;
             System.out.println("----------------------------------");
             System.out.println("\t User Authendication ");
@@ -28,8 +37,10 @@ public class Menu {
             System.out.println("3.show all books");
             System.out.print("enter your choise ?");
             choise = scanner.nextInt();
-            System.out.println(choise);
+            return choise;
     }
+
+    // switch auth operation
 
     public boolean switchAuthOperation(int choise){
         String userName = null;
@@ -60,4 +71,23 @@ public class Menu {
         return user.getisLogin();
     }
 
+    // switch library manegement
+
+    public void switchLibraryOperation(int choise){
+        int bookId;
+        switch (choise) {
+            case 1:
+                book.showAllBooks();
+                System.out.println("enter bookId to buy ?");
+                bookId = scanner.nextInt();
+                book.showSingleBook(bookId);
+                break;
+            case 3:
+                book.showAllBooks();
+                break;
+        
+            default:
+                break;
+        }
+    }
 }

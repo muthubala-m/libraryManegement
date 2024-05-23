@@ -7,7 +7,11 @@ public class Main {
             choise = menu.authMenu();
             isLogin = menu.switchAuthOperation(choise);
             if (isLogin) {
-                menu.libraryMenu();
+                int libChoise = 0;
+                do{
+                    libChoise = menu.libraryMenu();
+                    menu.switchLibraryOperation(libChoise);
+                }while(libChoise>0 && libChoise<5);
             }
         } while (choise>0 && choise<3);
     }

@@ -15,24 +15,32 @@ public class BookModel {
     private ResultSet resultSet = null;
 
     // get all books
-    public void getAllBooks(){
-        this.query = "select * from users";
+    public ResultSet getAllBooks(){
+        this.query = "select * from books";
         try{
             this.statement = this.connection.createStatement();
             this.resultSet = this.statement.executeQuery(query);
+            if (!this.resultSet.next()) {
+                System.out.println("no book in library");
+            }
         }catch(Exception e){
             System.err.println(e.getMessage());
         }
+        return resultSet;
     }
 
     // get a single book
-    public void getSingleBook(int bookId){
-        this.query = "select * from users where bookId="+bookId+"";
+    public ResultSet getSingleBook(int bookId){
+        this.query = "select * from books where bookId="+bookId+"";
         try{
             this.statement = this.connection.createStatement();
             this.resultSet = this.statement.executeQuery(query);
+            if (!this.resultSet.next()) {
+                System.out.println("no book in this bookId");
+            }
         }catch(Exception e){
             System.err.println(e.getMessage());
         }
+        return this.resultSet;
     }
 }
