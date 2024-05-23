@@ -18,6 +18,7 @@ public class User {
                 String passWordCopy = this.resultSet.getString(4);
                 if (passWord.equals(passWordCopy)) {
                     this.isLogin = true;
+                    System.out.println("login success");
                 }else{
                     System.out.println("password mismatch");
                 }

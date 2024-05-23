@@ -28,6 +28,7 @@ public class Menu {
         System.out.println("3.show all books");
         System.out.print("enter your choise ?");
         choise = scanner.nextInt();
+        System.out.println(choise);
     }
 
     public void switchAuthOperation(int choise){

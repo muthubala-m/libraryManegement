@@ -20,8 +20,6 @@ public class UserModel{
             this.resultSet =statement.executeQuery(query);
             if (!(resultSet.next())) {
                 this.resultSet = null;
-            }else{
-                this.resultSet.next();
             }
         }catch(Exception e){
             System.err.println(e.getMessage());
@@ -47,7 +45,7 @@ public class UserModel{
 
     public int insertUser(String userName,String email,String passWord){
         int rows = 0;
-        this.query = "insert into (userName,email,passWord)users values(?,?,?)";
+        this.query = "insert into users (userName,email,passWord) values(?,?,?)";
         try {
             this.preparedStatement = this.connection.prepareStatement(this.query);
             this.preparedStatement.setString(1, userName);
