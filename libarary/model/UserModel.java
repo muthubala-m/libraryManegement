@@ -52,8 +52,12 @@ public class UserModel{
             this.preparedStatement.setString(2, email);
             this.preparedStatement.setString(3, passWord);
             rows = this.preparedStatement.executeUpdate();
-        } catch (Exception e) {
-            System.err.println(e.getMessage());
+        } catch (SQLException e) {
+            if (e.getErrorCode() == 1062) {
+                System.err.println("user details alredy exists");
+            }else{
+                System.out.println(e.getMessage());
+            }
         }
         return rows;
     }
