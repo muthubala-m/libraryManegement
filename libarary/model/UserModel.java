@@ -14,11 +14,15 @@ public class UserModel{
 
     // get single user record
     public ResultSet getSingleUser(String userName){
-        this.query = "slect * from users where userName ="+userName+"";
+        this.query = "select * from users where userName ='"+userName+"'";
         try{
             this.statement = this.connection.createStatement();
-             this.resultSet =statement.executeQuery(query);
-             this.resultSet.next();
+            this.resultSet =statement.executeQuery(query);
+            if (!(resultSet.next())) {
+                this.resultSet = null;
+            }else{
+                this.resultSet.next();
+            }
         }catch(Exception e){
             System.err.println(e.getMessage());
         }

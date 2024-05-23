@@ -14,9 +14,8 @@ public class User {
     public void userLogin(String userName,String passWord){
         this.resultSet = userModel.getSingleUser(userName);
         try{
-            String userNameCopy = this.resultSet.getString(2);
-            String passWordCopy = this.resultSet.getString(4);
-            if (userName.equals(userNameCopy)) {
+            if (resultSet != null) {
+                String passWordCopy = this.resultSet.getString(4);
                 if (passWord.equals(passWordCopy)) {
                     this.isLogin = true;
                 }else{
@@ -25,9 +24,8 @@ public class User {
             }else{
                 System.out.println("userName not found please signup");
             }
-
         }catch(Exception e){
-            System.err.println(e.getMessage());
+                System.err.println(e.getMessage());
         }
     }
 
