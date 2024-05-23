@@ -35,6 +35,7 @@ public class User {
         int rows = userModel.insertUser(userName, email, passWord);
         if (rows == 1) {
             System.out.println("signin success");
+            this.isLogin = true;
         }else{
             System.out.println("sigin  fail");
         }

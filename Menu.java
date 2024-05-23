@@ -19,19 +19,19 @@ public class Menu {
     }
 
     public void libraryMenu(){
-        int choise = 0;
-        System.out.println("----------------------------------");
-        System.out.println("\t User Authendication ");
-        System.out.println("----------------------------------");
-        System.out.println("1.buying a new book");
-        System.out.println("2.return a book");
-        System.out.println("3.show all books");
-        System.out.print("enter your choise ?");
-        choise = scanner.nextInt();
-        System.out.println(choise);
+            int choise = 0;
+            System.out.println("----------------------------------");
+            System.out.println("\t User Authendication ");
+            System.out.println("----------------------------------");
+            System.out.println("1.buying a new book");
+            System.out.println("2.return a book");
+            System.out.println("3.show all books");
+            System.out.print("enter your choise ?");
+            choise = scanner.nextInt();
+            System.out.println(choise);
     }
 
-    public void switchAuthOperation(int choise){
+    public boolean switchAuthOperation(int choise){
         String userName = null;
         String email = null;
         String passWord = null;
@@ -57,5 +57,7 @@ public class Menu {
                 System.out.println("give a valid inputs 1 to 2");
                 break;
         }
+        return user.getisLogin();
     }
+
 }
